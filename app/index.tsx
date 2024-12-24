@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
+import { DrawerActions, useNavigation } from "@react-navigation/native";
 import BarChart from "@/components/BarChat";
 import PieChartPro from "@/components/PieChartPro";
 
@@ -22,7 +22,9 @@ export default function Dashboard() {
       <StatusBar barStyle={"dark-content"} backgroundColor={"#F5F8FF"} />
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.innerContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+          >
             <Image
               source={require("../assets/images/openDrawer.png")}
               style={styles.openDrawerImage}
