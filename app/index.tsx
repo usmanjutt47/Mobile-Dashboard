@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import BarChart from "@/components/BarChat";
+import PieChartPro from "@/components/PieChartPro";
 
 const { width, height } = Dimensions.get("window");
 
@@ -52,6 +54,12 @@ export default function Dashboard() {
               <Text style={styles.applicationTextPrice}>114</Text>
             </View>
           </TouchableOpacity>
+          <View style={{ marginTop: height * 0.01 }}>
+            <BarChart />
+          </View>
+          <View style={{ marginTop: height * 0.01 }}>
+            <PieChartPro />
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -65,6 +73,7 @@ const styles = StyleSheet.create({
   },
   scrollViewContent: {
     flexGrow: 1,
+    paddingBottom: "5%",
   },
   innerContainer: {
     width: "90%",
